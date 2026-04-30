@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Notes App</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Notes App</h1>
+
+        <!-- ========================= -->
+        <!-- AUTH SECTION -->
+        <!-- ========================= -->
+
+        <div class="auth-box">
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Enter Email"
+            >
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Enter Password"
+            >
+
+            <div class="auth-buttons">
+
+                <button onclick="signup()">
+                    Sign Up
+                </button>
+
+                <button onclick="login()">
+                    Login
+                </button>
+
+                <button onclick="logout()">
+                    Logout
+                </button>
+
+            </div>
+
+            <p id="status">
+                Not Logged In
+            </p>
+
+        </div>
+
+        <hr>
+
+        <!-- ========================= -->
+        <!-- NOTES SECTION -->
+        <!-- ========================= -->
+
+        <div class="note-form">
+
+            <input
+                type="text"
+                id="note-id"
+                placeholder="Enter Note ID for Update/Delete"
+            >
+
+            <input
+                type="text"
+                id="title"
+                placeholder="Enter Note Title"
+            >
+
+            <textarea
+                id="content"
+                placeholder="Write Your Note"
+            ></textarea>
+
+            <div class="note-buttons">
+
+                <button onclick="createNote()">
+                    Add Note
+                </button>
+
+                <button onclick="fetchNotes()">
+                    Get Notes
+                </button>
+
+                <button onclick="updateNote()">
+                    Update Note
+                </button>
+
+                <button onclick="deleteNoteFromInput()">
+                    Delete Note
+                </button>
+
+            </div>
+
+        </div>
+
+        <hr>
+
+        <!-- ========================= -->
+        <!-- NOTES DISPLAY -->
+        <!-- ========================= -->
+
+        <div id="notes-container">
+
+        </div>
+
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
